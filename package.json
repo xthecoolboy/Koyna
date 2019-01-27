@@ -1,5 +1,5 @@
 {
-    "name": "Koyna",
+    "name": "package",
     "version": "1.0.0",
     "description": "A discord bot",
     "main": "index.js",
@@ -20,7 +20,7 @@
     "bugs": {
       "url": "https://github.com/spacesanjeet/Koyna"
     },
-    "homepage": "url",
+    "homepage": "https://github.com/spacesanjeet/Koyna",
     "dependencies": {
       "discord.js": "^11.3.2",
       "mal-scraper": "2.4.2",
