@@ -10,5 +10,5 @@ Userinfo
 Avatar
 InviteLink
 Welcome-logs
-Say command
-Help command</code>
+Say-command
+Help-command</code>
