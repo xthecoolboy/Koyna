@@ -1,3 +1,3 @@
 # Koyna
 <b>A discord chat bot.</b>
-<p>Koyna is a chat bot made with <i>javascript</i> and the library used is <i>discord.js.</i></p>
+<p>Koyna is a chat bot made with <b><u>javascript</u></b> and the library used is <b><u>discord.js</u>.</b></p>
