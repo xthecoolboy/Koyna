@@ -79,7 +79,7 @@ client.on("message", (message) => {
 		
     if (message.content.startsWith(prefix + "urban")){
 
-    webdict('urbandictionary',args[1]).then(response=>{message.channel.send({embed:new RichEmbed().setTitle(args[1]).setDescription(response.definition[0])})});
+    webdict('urbandictionary',args[1]).then(response=>{message.channel.send({embed:new RichEmbed().setColor("RANDOM").setTitle(args[1]).setDescription(response.definition[0])})});
 
     } else
 
