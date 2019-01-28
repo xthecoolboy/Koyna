@@ -106,6 +106,7 @@ client.on("message", (message) => {
         .addField("ping:", "pong! speed matters!")
         .addField("ava:", "get your or someone's avatar/pfp")
         .addField("invite:", "invite for the bot")
+        .addField("urban:", "get definition from urban dictionary")
         .addField("info:", "bot info and thank you message")
         .addField("serverinfo:", "get the guild details")
         .addField("userinfo:", "get the user details")
