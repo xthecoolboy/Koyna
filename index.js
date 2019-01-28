@@ -76,17 +76,39 @@ client.on("message", (message) => {
     .setFooter(message.guild.name)
     message.channel.send(embed)
 	} else
-		
-    if (message.content.startsWith(prefix + "urban")){
-
-    webdict('urbandictionary',args[1]).then(response=>{message.channel.send({embed:new RichEmbed().setColor("RANDOM").setTitle(args[1]).setDescription(response.definition[0])})});
-
-    } else
 
 	if (message.content.startsWith(prefix + "on")) {
     if(message.author.id == ownerId) {
         message.channel.send("Countermeasures [😊] confirmed, Hello boss.")
     } else message.channel.send("I didn't hear if you said something")
+  } else
+
+  if (message.content.startsWith(prefix + "bot")) {
+    let embed = new RichEmbed()
+    .setColor("RANDOM")
+    .setThumbnail(client.user.avatarURL)
+    .addField("Name:", "Koyna")
+    .addField("CreatedOn:", client.user.createdAt)
+    .addField("Guilds:", client.guilds.size)
+    .addField("Users:", client.users.size)
+    .addField("Total commands:", "9")
+    .addField("Repository:", "https://github.com/spacesanjeet/Koyna")
+    .setFooter("Created by spacesanjeet#1363")
+    message.channel.send(embed)
+  } else
+    
+  if (message.content.startsWith(prefix + "def")) {
+    relevantUrban(args[1]).then(response =>{
+        let embed = new RichEmbed()
+        .setColor("RANDOM")
+        .setTitle(args[1])
+        .setURL(response.urbanURL)
+        .setThumbnail(client.user.avatarURL)
+        .setDescription(`**Definition:**\n*${response.definition}*\n\n**Example:**\n*${response.example}*`) // Definition of the word
+        .addField('Author', response.author, true) // Author of the fetched word
+        .addField('Rating', `**\`Upvotes: ${response.thumbsUp} | Downvotes: ${response.thumbsDown}\`**`)
+        message.channel.send(embed)
+    })
   } else
     
   if (message.content.startsWith(prefix + "info")) {
