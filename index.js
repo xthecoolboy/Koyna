@@ -1,4 +1,5 @@
 const { Client, RichEmbed } = require('discord.js');  //entering the bot on discord
+const webdict = require("webdict");
 const client = new Client();
 const http = require('http');
 const express = require('express');
@@ -75,6 +76,12 @@ client.on("message", (message) => {
     .setFooter(message.guild.name)
     message.channel.send(embed)
 	} else
+		
+    if (message.content.startsWith(prefix + "urban")){
+
+    webdict('urbandictionary',args[1]).then(response=>{message.channel.send({embed:new RichEmbed().setColor("RANDOM").setTitle(args[1]).setDescription(response.definition[0])})});
+
+    } else
 
 	if (message.content.startsWith(prefix + "on")) {
     if(message.author.id == ownerId) {
