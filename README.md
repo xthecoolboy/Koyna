@@ -8,6 +8,7 @@ Koyna
 Serverinfo
 Userinfo
 Avatar
+Urban-Definitions
 InviteLink
 Welcome-logs
 Say-command
