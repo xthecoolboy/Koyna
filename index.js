@@ -45,24 +45,21 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome-bye');
-    let memberavatar = member.user.avatarURL
     if (!channel) return;
-    let embed = new RichEmbed()
-    .setThumbnail(memberavatar)
-    .setTitle("See ya Later")
-    .setColor("RANDOM")
-    .addField(`${member.username} just left the server!`)
-    .addField(`ServerCount:, ${member.guild.memberCount}`)
-    .setTimestamp(new Date())
-    .setFooter(member.guild.name)
+    let embed = new Discord.RichEmbed()
+      .setThumbnail(client.users.get(member.id).displayAvatarURL)
+      .setTitle("Member Left")
+      .setColor("RANDOM")
+      .setDescription("We are sad to see you leaving, " + member + ", see you later!")
+      .addField("Username : ", client.users.get(member.id).username, true)
+      .addField("ID : ", client.users.get(member.id).id, true)
+      .addField("Tag : ", client.users.get(member.id).tag, true)   
+      .addField("Created At : ", client.users.get(member.id).createdAt, true)
+      .addField("Membercount : ", member.guild.memberCount, true)
+      .setTimestamp()
+      .setFooter(member.guild);
     channel.send(embed)
 });
-
-client.on('guildMemberRemove', member => {
-    console.log(`${member}` + "has left" + `${member.guild.name}` + "Sending leave message now")
-    console.log("Leave message sent")
-});
-
 
 const prefix = "k!";                    //prefix of the bot
 client.on("message", (message) => {
