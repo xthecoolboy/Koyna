@@ -111,7 +111,7 @@ client.on("message", (message) => {
     .addField("Guilds:", client.guilds.size)
     .addField("Users:", client.users.size)
     .addField("Total commands:", "9")
-    .addField("Repository:", "https://github.com/spacesanjeet/Koyna")
+    .addField('Repository:', '[Koyna on Github]("https://github.com/spacesanjeet/Koyna")
     .setFooter("Created by spacesanjeet#1363")
     message.channel.send(embed)
   } else
