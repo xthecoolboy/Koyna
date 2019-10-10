@@ -6,8 +6,8 @@ module.exports = {
     usage: '[command]',
     cooldown: 3,
     execute(client, message, args) {
-    		client.destroy()
-    		client.login(process.env.TOKEN)
+		client.destroy()
+    	client.login(process.env.TOKEN)
     	message.channel.send(`Rebooted successfully. API latency is ${Math.round(client.ping)}ms`);
     },
 };
