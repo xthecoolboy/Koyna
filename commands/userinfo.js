@@ -3,11 +3,11 @@ const { RichEmbed } = require('discord.js');
 module.exports = {
 	name: 'user',
 	description: 'Get details about someone.',
-  guildOnly: true,
+  	guildOnly: true,
 	aliases: ['userinfo', 'whois'],
-  usage: '[mention]',
-  cooldown: 3,
-  execute(client, message, args) {
+  	usage: '[mention]',
+  	cooldown: 3,
+  	execute(client, message, args) {
     	let member = message.mentions.users.first() || message.author;
         let id = client.users.get(member.id).id;
         let embed = new RichEmbed()
