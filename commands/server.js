@@ -3,7 +3,7 @@ const { RichEmbed } = require('discord.js');
 module.exports = {
 	name: 'server',
 	description: 'Get server/guild info.',
-  guildOnly: true,
+  	guildOnly: true,
 	aliases: ['serverinfo', 'guildinfo', 'guild'],
 	usage: '[command]',
 	cooldown: 3,
