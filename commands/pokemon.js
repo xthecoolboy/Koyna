@@ -13,6 +13,7 @@ module.exports = {
         if(!name) return message.channel.send("Provide a pokemon name!");
         const link = "https://some-random-api.ml/pokedex?pokemon=" + `${name}`;
         request({url: link, json: true}, (err, res, body) => {
+            if (typeof body.name == 'undefined') return message.channel.send("Can't find that pokemon!")
             var evolutionLine_message;
             if (body.family.evolutionLine.length == 0)
                 evolutionLine_message = "This pokemon doesn't evolve."
@@ -31,7 +32,6 @@ module.exports = {
             .setTimestamp(new Date())
             .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL)
             message.channel.send(embed)
-            if(err) return message.channel.send("Sorry, something went wrong!");
         });
     },
 };
