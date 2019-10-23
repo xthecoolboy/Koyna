@@ -17,13 +17,13 @@ module.exports = {
         //let spam_message = spam_split.split(spam_no).join(" ");
         if (spam_channel) {
             //if(!spam_no) return message.channel.send("You didn't provide how much to spam!");
-            if(!spam_no) return message.channel.send(`Correct usage is:- ${prefix}spam <limit> <message>`).then(m => {m.delete(8000)});
+			if(!spam_no) return message.channel.send(`Correct usage is:- ${prefix}spam <limit> <message>`).then(m => {m.delete(8000)});
 			if(!spam_message) return message.channel.send(`Correct usage is:- ${prefix}spam <limit> <message>`).then(m=> {m.delete(8000)});
-            if(spam_no > 99) return message.channel.send("Can't spam more than 99 messages in once").then(m => {m.delete(4000)});
-            for(var i=0; i <spam_no; i++) spam_channel.send(spam_message);
+			if(spam_no > 99) return message.channel.send("Can't spam more than 99 messages in once").then(m => {m.delete(4000)});
+			for(var i=0; i <spam_no; i++) spam_channel.send(spam_message);
         }
-    	  else {
+		else {
             message.channel.send("This command can only be used in the channel named 'spam'.")
-    	  }
+		}
 	},
 };
