@@ -1,10 +1,12 @@
 {
   "name": "Bisly",
+{
+  "name": "Bisly",
   "version": "3.0.0",
   "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -12,13 +14,14 @@
     "fs": "^0.0.2",
     "figlet": "^1.2.4",
     "yt-search": "^0.4.1",
-    "pokedex-promise-v2": "^3.1.1",
     "request": "^2.88.0",
-    "google": "^2.1.0",
-    "os": "^0.1.1"
+    "os": "^0.1.1",
+    "some-random-api": "^1.2.0",
+    "imdb": "^1.1.0",
+    "name-to-imdb": "^2.3.2"
   },
   "engines": {
-    "node": "8.x"
+    "node": "12.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
