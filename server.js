@@ -104,7 +104,7 @@ client.on('messageDelete', async (message) => {
 	} else { 
     		user = message.author.username
   	}
-  	logs.send(`A message **(${message})** was deleted in **${message.channel.name}** by **${user}**`);
+  	logs.send(`A message (**${message}**) was deleted in **${message.channel.name}** by **${user}**`);
 });
 
 client.login(token);
