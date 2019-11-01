@@ -16,7 +16,8 @@
     "os": "^0.1.1",
     "some-random-api": "^1.2.0",
     "imdb": "^1.1.0",
-    "name-to-imdb": "^2.3.2"
+    "name-to-imdb": "^2.3.2",
+    "common-tags": "^1.8.0"
   },
   "engines": {
     "node": "12.x"
