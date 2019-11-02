@@ -3,17 +3,18 @@ const { RichEmbed } = require('discord.js');
 module.exports = {
 	name: 'server',
 	description: 'Get server/guild info.',
-  	guildOnly: true,
+  guildOnly: true,
 	aliases: ['serverinfo', 'guildinfo', 'guild'],
 	usage: '[command]',
 	cooldown: 3,
 	execute(client, message, args) {
 		let embed = new RichEmbed()
     	.setColor('RANDOM') // Random color everytime
-    	.setTitle('Server Info') // Title is clickable
+    	.setTitle(`**${message.guild.name} [${message.guild.id}]**`) 
     	.setThumbnail(message.guild.iconURL)
-    	.addField("ServerName:", message.guild.name)
-    	.addField("ServerID:", message.guild.id)
+    	//.addField("ServerName:", message.guild.name)
+    	//.addField("ServerID:", message.guild.id)
+			.addField(`**Roles:`, message.guild.roles.map(r => r.name).sort().splice(1).join(', '))
     	.addField("CreatedAt:", message.guild.createdAt)
     	.addField("Owner:", message.guild.owner)
     	.addField("OwnerId:", message.guild.owner.id)
