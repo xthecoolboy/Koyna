@@ -31,7 +31,7 @@ module.exports = {
     //}
 		
 		let embed = new RichEmbed()
-    	.setColor('RANDOM') // Random color everytime
+    	.setColor('#20bab5') // Random color everytime
     	.setTitle(`**${message.guild.name} [${message.guild.id}]**`) 
     	.setThumbnail(message.guild.iconURL)
     	//.addField("ServerName:", message.guild.name)
@@ -40,7 +40,7 @@ module.exports = {
 			.addField(`Channels:`, `> **${textChnl.length}** Text, **${voiceChnl.length}** Voice, **${chnlCat.length}** Categories.
 				> AFK: **${message.guild.afkChannel}**`)
 			.addField(`Members:`, `> ${message.guild.memberCount} members
-				> Owner: **${message.guild.owner}** (ID: **${message.guild.owner.id}**)`, true)
+				> Owner: **${message.guild.owner}** (ID: **${message.guild.owner.id}**)`)
     	//.addField("CreatedAt:", message.guild.createdAt)
     	//.addField("Owner:", message.guild.owner)
     	//.addField("OwnerId:", message.guild.owner.id)
