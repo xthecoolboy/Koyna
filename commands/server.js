@@ -29,7 +29,7 @@ module.exports = {
     	.setThumbnail(message.guild.iconURL)
 			.addField(`**Roles**`, message.guild.roles.map(r => r.name).sort().splice(1).join(', '))
 			.addField(`Channels:`, `> **${textChnl.length}** Text, **${voiceChnl.length}** Voice, **${chnlCat.length}** Categories.
-				> AFK: **${message.guild.afkChannel}**`)
+				> AFK: **${message.guild.afkChannel ? message.guild.afkChannel : `None`}**`)
 			.addField(`Members:`, `> ${message.guild.memberCount} members
 				> Owner: **${message.guild.owner}** (ID: **${message.guild.owner.id}**)`)
 			.addField(`Other:`, `> Roles: **${message.guild.roles.size}**
