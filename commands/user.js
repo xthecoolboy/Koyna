@@ -15,6 +15,7 @@ module.exports = {
 		let Created_At = moment(member.createdAt);
 		let Joined = Joined_At.format('MMMM Do YYYY, h:mm:ss a');
 		let Created = Created_At.format('MMMM Do YYYY, h:mm:ss a');
+		let Roles = message.guild.members.get(id).roles.map(r => `<@&${r.id}>`).slice(1).join(", ");
     let embed = new RichEmbed()
 			.setColor(message.guild.member(member).highestRole.color)
       .setThumbnail(member.displayAvatarURL)
@@ -26,15 +27,7 @@ module.exports = {
 				> Joined At: **${Joined}**
 				> Bot: **${member.bot ? "Yes" : "No"}**
 				> Game: **${message.guild.member(member).presence.game ? message.guild.member(member).presence.game.name : "Not Playing"}**`)
-			.addField(`**Roles**`, message.guild.members.get(id).roles.map(r => `<@&${r.id}>`).slice(1).join(", "))
-      //.addField(`Name:`, member.username, true)
-      //.addField("Nickname:", message.guild.member(member).nickname ? message.guild.member(member).nickname : "None", true )
-      //.addField(`ID:`, member.id, true)
-      //.addField("CreatedAt:", member.createdAt, true)
-      //.addField("JoinedAt:", message.guild.members.get(member.id).joinedAt)
-      //.addField(`Bot:`, member.bot ? "Yes" : "No", true)
-      //.addField("Game:", message.guild.member(member).presence.game ? message.guild.member(member).presence.game.name : "Not Playing", true) // the ? and : are like an if statement if (message.guild.member(member).presence.game ) { message.guild.member(member).presence.game.name } else "Not Playing"
-      //.addField("Roles : ", message.guild.members.get(id).roles.map(r => `<@&${r.id}>`).slice(1).join(", "))
+			.addField(`**Roles**`, `${Roles ? Roles : "**No Roles**"}`)
       .setTimestamp(new Date())
       .setFooter(message.guild.name)
 		message.channel.send(embed);
