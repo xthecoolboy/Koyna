@@ -1,4 +1,5 @@
 const { RichEmbed } = require('discord.js');
+const moment = require('moment');
 
 module.exports = {
 	name: 'server',
@@ -23,6 +24,9 @@ module.exports = {
       return `${c.type == 'category' || c.type == 'text'? '': c.name}`
     }).filter(c => c != '').sort();
 		
+		let Created_At = moment(message.guild.createdAt);
+		let Created = Created_At.format('MMMM Do YYYY, h:mm:ss a');
+		
 		let embed = new RichEmbed()
     	.setColor('#20bab5') 
     	.setTitle(`**${message.guild.name} [${message.guild.id}]**`) 
@@ -34,7 +38,7 @@ module.exports = {
 				> Owner: **${message.guild.owner}** (ID: **${message.guild.owner.id}**)`)
 			.addField(`Other:`, `> Roles: **${message.guild.roles.size}**
 				> Region: **${message.guild.region.slice(0,1).toUpperCase()}${message.guild.region.slice(1)}**
-				> Created at: **${message.guild.createdAt}**
+				> Created at: **${Created}**
 				> Verification Level: **${message.guild.verificationLevel}**`)
     	message.channel.send(embed)
 	},
