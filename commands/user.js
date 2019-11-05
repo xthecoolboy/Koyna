@@ -21,7 +21,7 @@ module.exports = {
 				> Joined At: **${message.guild.members.get(member.id).joinedAt}**
 				> Bot: **${member.bot ? "Yes" : "No"}**
 				> Game: **${message.guild.member(member).presence.game ? message.guild.member(member).presence.game.name : "Not Playing"}**`)
-			//.addField(`**Roles**`, message.guild.members.get(id).roles.map(r => `<@&${r.id}>`).slice(1).join(", "))
+			.addField(`**Roles**`, message.guild.members.get(id).roles.map(r => `<@&${r.id}>`).slice(1).join(", "))
       //.addField(`Name:`, member.username, true)
       //.addField("Nickname:", message.guild.member(member).nickname ? message.guild.member(member).nickname : "None", true )
       //.addField(`ID:`, member.id, true)
