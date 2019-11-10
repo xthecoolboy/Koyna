@@ -11,7 +11,7 @@ module.exports = {
     if(!dMessage) return message.channel.send('Specify a message!').then(m => {m.delete(8000)});
 		message.delete()
 		message.channel.send("DM Sent")
-    message.User.send(dMessage)
+    User.send(dMessage)
 		//client.guilds.get("496197306882719755").channels.get("582068551633076231").send(embed);
 	},
 };
