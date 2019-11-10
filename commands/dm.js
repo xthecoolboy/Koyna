@@ -1,13 +1,14 @@
 module.exports = {
 	name: 'dm',
-	description: 'DM's a user.',
+	description: 'DMs a user.',
   guildOnly: true,
-  usage: '[mention message]'
+  usage: ['mention message'],
+	cooldown: 2,
 	execute(client, message, args) {
-    let User = message.guild.member(message.mentions.users.first() || message.author || message.guild.members.get(args[0]));
-		if(!User) return message.channel.send("Mention a user!");
+    let User = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+		if(!User) return message.channel.send("Mention a user!").then(m => {m.delete(8000)});
     let dMessage = args.slice(1).join(' ');
-    if(!dMessage) return message.channel.send('Specify a message!');
+    if(!dMessage) return message.channel.send('Specify a message!').then(m => {m.delete(8000)});
 		message.delete()
 		message.channel.send("DM Sent")
     message.User.send(dMessage)
