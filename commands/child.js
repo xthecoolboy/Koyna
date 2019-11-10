@@ -13,9 +13,9 @@ module.exports = {
       var sayings = [" no", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", " 10", " 11", " 12"]
       var result = Math.floor((Math.random() * sayings.length) + 0);
       let embed = new RichEmbed()
-      .setTitle('Virginity Test')
-      .setColor('#ed2c09')
-      .setDescription(`${User} will have sayings[result] kids`)
+      .setTitle('Child Test')
+      .setColor('#79db0f')
+      .setDescription(`${User} will have ${sayings[result]} kids`)
       message.channel.send(embed)
     },
 };
