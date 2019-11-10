@@ -2,7 +2,7 @@ const { RichEmbed } = require('discord.js');
 
 module.exports = {
     name: 'child',
-    description: 'Random virginity calculator.',
+    description: 'Random child calculator.',
     guildOnly : true,
     usage: '[mention user]',
     cooldown: 2,
