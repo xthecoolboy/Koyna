@@ -10,7 +10,7 @@ module.exports = {
       let User = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
       if(!User) return message.channel.send('Mention a user!');
       //if(!args[0]) return message.channel.send("Ask a vaild question!");
-      var sayings = [" is male", " is not a female", " is lesbian", " is gay", " is shemale", " is neutral"]
+      var sayings = [" is male", " is female", " is lesbian", " is gay", " is shemale", " is neutral"]
       var result = Math.floor((Math.random() * sayings.length) + 0);
       let embed = new RichEmbed()
       .setTitle('Gender Test')
