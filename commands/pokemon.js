@@ -37,7 +37,7 @@ module.exports = {
               .setDescription(body.description)
               .addField("Basics:", `**Id: **${body.id}\n**Type: **${body.type.join(", ")}\n**Species: **${body.species.join(", ")}\n**Abilities: **${body.abilities.join(", ")}\n**Height: **${body.height}\n**Weight: **${body.weight}\n**Base experience: **${body.base_experience}\n**Gender: **${body.gender.join(", ")}\n**Egg Groups: **${body.egg_groups.join(", ")}`, true)
               .addField("Stats:", `**Hp: **${body.stats.hp}\n**Attack: **${body.stats.attack}\n**Defense: **${body.stats.defense}\n**SpecialAtk: **${body.stats.sp_atk}\n**SpecialDef: **${body.stats.sp_def}\n**Speed: **${body.stats.speed}\n**Total: **${body.stats.total}`, true)
-              .addField("Family:", `**Evolution Stage: **${body.family.evolutionStage}\n**Evolution line: **${evolutionLine_message}`, true)
+              .addField("Family:", `**Evolution Stage: **${body.family.evolutionStage}\n**Evolution line: **${evolutionLine_message}`)
               .setImage(pokemon_sprite)
               .setTimestamp(new Date())
               .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.author.displayAvatarURL)
