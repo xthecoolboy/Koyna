@@ -21,7 +21,7 @@ module.exports = {
         embed = new RichEmbed()
         .setTitle(data.title)
         .setThumbnail(data.poster)
-        .setDescription(`**Description:** ${data.description}\n**Rating:** ${data.rating}\n**Genre/Release: **${data.genre}`)
+        .setDescription(`**Description:** ${data.description}\n**Rating:** ${data.rating}\n**Genre/Release:** ${data.genre}`)
         .setFooter(`Metascore: ${data.metascore}`)
         .setTimestamp(new Date())
         message.channel.send(embed)
