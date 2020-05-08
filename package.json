@@ -1,6 +1,6 @@
 {
-  "name": "Bisly",
-  "version": "3.0.0",
+  "name": "Koyna",
+  "version": "2.0.0",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
   "scripts": {
